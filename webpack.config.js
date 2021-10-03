@@ -6,14 +6,14 @@ module.exports = {
   mode: 'development',
   entry: './index',
   output: {
-    filename: "[name].js",
+    filename: '[name].js',
     path: path.resolve(__dirname, 'build'),
     clean: true,
   },
   module: {
     rules: [
       {
-        test: /\.js$/i,
+        
         exclude: /node_modules/,
         include: path.resolve(__dirname, 'src/'),
         use: {
@@ -24,7 +24,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(scss|css)$/i,                                                                                                                                                            
+                                                                                                                                                                
           use: ["style-loader", "css-loader", "sass-loader"],  
       },
       {
@@ -41,12 +41,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Phaser Game',
-      template: path.resolve(__dirname, 'index.html'),
+      template: path.resolve(__dirname, '[name].html'),
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-            from: path.resolve(__dirname, 'index.html'),
+            from: path.resolve(__dirname, '[name].html'),
             to: path.resolve(__dirname, 'build'),
           },
           {
