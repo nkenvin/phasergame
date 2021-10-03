@@ -41,7 +41,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Phaser Game',
-      template: path.resolve(__dirname, '[name].html'),
+      template: path.resolve(__dirname, 'index.html'),
     }),
     new CopyWebpackPlugin({
       patterns: [
