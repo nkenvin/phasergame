@@ -26,9 +26,18 @@ module.exports = {
       {
                                                                                                                                                                 
           use: ["style-loader", "css-loader", "sass-loader"], 
-          options: {
-            indentedSyntax: true
-          } 
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              indentedSyntax: true
+            }
+          }
+        ]
       },
       {
         test: /\.(jpg|jpeg|png|svg|gif)$/i,
